@@ -17,17 +17,12 @@ const fs = require('fs');
       let ev_1 = Eodd.split("\n")
       ev_arr.push(Eodd)
       o_arr.push(ev_1)
-      
-
     }
     for(var i=0; i<Odd.length; i++) {
       let Eodd = await page.evaluate(el => el.textContent, Odd[i]);
       let ev_1 = Eodd.split("\n")
       ev_arr.push(Eodd)
       o_arr.push(ev_1)
-      
-      
-
     }
     for(var i=0; i<o_arr.length; i++) {  
       let ov = o_arr[i];
@@ -42,11 +37,9 @@ const fs = require('fs');
         value: parseInt(o2[3]),
         sell_price : parseInt(o2[4]),
         profit: parseInt(o2[5]),
-
       }
       let o_json = JSON.stringify(o_obj);
-      console.log(o_obj);
-      
+      console.log(o_obj);    
       fs.appendFileSync("data.json","\n"+o_json+",");
     }
     await browser.close();
